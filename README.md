@@ -1,7 +1,7 @@
 # Serena & Nick · Labor Day Weekend
 
-A warm welcome guide for Serena and Nick’s Kirkland visit, September 6–8, 2026.
+A compact, image-led choice board for Serena and Nick’s Kirkland visit, September 6–8, 2026.
 
-The page includes easy Sunday arrival choices, three scenic moderate Monday hikes, and the Monday evening BBQ.
+Photo provenance is recorded in `assets/images/sources.json`. Images are tied to the corresponding official destination/event page or Wikimedia Commons file; the page uses short copy so guests can compare choices quickly.
 
 Details may shift with weather and trail conditions.
