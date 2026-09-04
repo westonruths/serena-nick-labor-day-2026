@@ -7,7 +7,7 @@
   <title>
    Serena &amp; Nick · Choose Your Weekend
   </title>
-  <link href="assets/style.css?v=full-image-cards" rel="stylesheet"/>
+  <link href="assets/style.css?v=clickable-evening" rel="stylesheet"/>
  </head>
  <body>
   <header class="topbar">
@@ -149,6 +149,26 @@
       <a href="https://bobscorn.com/sunflower-experience/" rel="noopener" target="_blank">
        Details ↗
       </a>
+     </article>
+    </div>
+    <div class="subsection-head">
+     <p class="eyebrow">Sunday evening</p>
+     <p>Two easy options if you’d like to go back out after settling in.</p>
+    </div>
+    <div class="choices evening-choices">
+     <article class="choice" data-card-link="https://www.kirklandwa.gov/Government/Departments/Parks-and-Community-Services/Find-a-Park/Juanita-Bay-Park" tabindex="0" role="link">
+      <img alt="Juanita Bay Park marsh and boardwalk" class="choice-image" src="assets/images/juanita.jpg"/>
+      <div class="choice-main"><span class="choice-number">01</span><div><h3>Juanita Bay Park</h3><p>Easy boardwalk nature walk and a quiet sunset reset.</p></div></div>
+      <div class="facts"><div><span class="fact-label">Travel</span>~10–15 min from home</div><div><span class="fact-label">On-site</span>6:30–8 p.m.</div><div><span class="fact-label">Total</span><strong>~1½–2 hrs incl. travel</strong></div><div><span class="fact-label">Cost</span>Free</div></div>
+      <p class="choice-note">Small lot; easy to shorten if everyone is tired.</p>
+      <a href="https://www.kirklandwa.gov/Government/Departments/Parks-and-Community-Services/Find-a-Park/Juanita-Bay-Park" rel="noopener" target="_blank">Park details ↗</a>
+     </article>
+     <article class="choice" data-card-link="https://bellevuewa.gov/city-government/departments/parks/parks-and-trails/parks/bellevue-downtown-park" tabindex="0" role="link">
+      <img alt="Bellevue Downtown Park lawn and skyline" class="choice-image" src="assets/images/bellevue.jpg"/>
+      <div class="choice-main"><span class="choice-number">02</span><div><h3>Bellevue Downtown Park</h3><p>Waterfall loop, open lawn, and an easy dinner nearby.</p></div></div>
+      <div class="facts"><div><span class="fact-label">Travel</span>~20 min from home</div><div><span class="fact-label">On-site</span>6–8:30 p.m.</div><div><span class="fact-label">Total</span><strong>~2½–3½ hrs incl. travel</strong></div><div><span class="fact-label">Cost</span>Free + dinner</div></div>
+      <p class="choice-note">Park hours and nearby restaurant availability can vary.</p>
+      <a href="https://bellevuewa.gov/city-government/departments/parks/parks-and-trails/parks/bellevue-downtown-park" rel="noopener" target="_blank">Park details ↗</a>
      </article>
     </div>
    </section>
@@ -378,5 +398,14 @@
     </a>
    </div>
   </footer>
+  <script>
+   document.querySelectorAll('.choice').forEach(function(card){
+    var link=card.dataset.cardLink||(card.querySelector('a')&&card.querySelector('a').href);
+    if(!link)return;
+    card.classList.add('is-clickable');
+    card.addEventListener('click',function(event){if(!event.target.closest('a'))window.open(link,'_blank','noopener');});
+    card.addEventListener('keydown',function(event){if((event.key==='Enter'||event.key===' ')&&!event.target.closest('a')){event.preventDefault();window.open(link,'_blank','noopener');}});
+   });
+  </script>
  </body>
 </html>
